@@ -11,6 +11,11 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+    res.send('Server is running!');
+  });
+  
+
 // Contact form endpoint
 app.post("/contact", async (req, res) => {
   const { firstName, lastName, email, phone, message } = req.body;
